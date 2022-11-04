@@ -22,14 +22,14 @@ const userSchema = mongoose.Schema({
        max :50,
         unique:true,
         trim:true,
-       /* validate: {
+       validate: {
             validator: (value) => {
               const re =
                 /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
               return value.match(re);
             },
             message: "Please enter a valid email address",
-          },*/
+          },
         },
     
     password:{
@@ -43,6 +43,41 @@ const userSchema = mongoose.Schema({
         default:""
         
     },
+    profileimage:{
+      type:String,
+      default:""
+      
+  },
+    followers:{
+      type:Array,
+      default:[]
+      
+  },
+  following:{
+    type:Array,
+    default:[]
+    
+},
+likedposts:{
+  type:Array,
+  default:[]
+  
+},
+savedposts:{
+  type:Array,
+  default:[]
+  
+},
+posts:{
+  type:Array,
+  default:[]
+  
+},
+notification:{
+  type:Array,
+  default:[]
+  
+},
 });
 
 
